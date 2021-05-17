@@ -24,7 +24,7 @@ const routes = [
   {path: '/book', component: Book},
   {path: '/cnnode',component: CNNode},
   {path: '/index',component: Index},
-  {path: '/register',component: Register}
+  {path: '/register',component: Register},
 ]
 const router = new VueRouter({
   routes // (缩写) 相当于 routes: routes
