@@ -8,8 +8,9 @@
         <div id="registerContentBody">
           <el-input
             id="newusername"
-            v-model="newUser.newusername"
-            clearable
+            v-model="newUser.newusername" 
+            clearable 
+           
           ></el-input>
           <el-input
             id="newpassword"
@@ -33,24 +34,24 @@ export default {
   data() {
     return {
       newUser: {
-        newusername: "admin",
-        newpassword: "123456",
+        newusername: "",
+        newpassword: "",
       },
     };
   },
   methods: {
     // CORS
     registerSystem() {
-      // Axios.get('http://localhost:3000/register',{
-      //     params:this.newUser
-      // }).then(function(response){
-      //   alert(response.data)
-      // })
-      Axios.post("http://localhost:3000/register", {
-        params: this.newUser,
-      }).then(function (response) {
-        alert(response.data);
-      });
+      Axios.get('http://localhost:3000/register/check',{
+          params:this.newUser
+      }).then(function(response){
+        alert(response.data.message)
+      })
+      // Axios.post("http://localhost:3000/register", {
+      //   params: this.newUser,
+      // }).then(function (response) {
+      //   alert(response.data.state + '\n' + response.data.message);
+      // });
     },
   },
 };

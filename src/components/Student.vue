@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus" rel="stylesheet/stylus">
+#student
+    background-color: red;
+    height: 300px;
 </style>
